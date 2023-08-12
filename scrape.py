@@ -26,10 +26,8 @@ class Thread():
             if elt.name =="a":
                 self.get_link(elt)
             else:
-                #self.text += quote+elt.replace("\n\n", "\n\n"+quote)
                 self.text += elt.replace("\n", "\n"+quote)
-                #self.text = f'{self.text}\n{quote}'
-        self.text += "\n\n"
+        self.text += "\n{}\n".format(quote)
 
     def get_link(self,tag):
         #avoid putting members'name in link or useless local link
