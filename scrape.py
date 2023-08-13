@@ -84,7 +84,7 @@ class Thread():
                     self.check_if_quoted(tag)
                     self.get_media(tag.img["src"],"image","![image]({})",".",3)
                 if tag['class'][0] == "card-image":
-                    parent = tag.find_parents("a", class_="card-container")[0]
+                    parent = tag.find_parent("a", class_="card-container")
                     self.get_media(tag.img["src"],"image",f"[![image]({{}})]({parent['href']})","format%3D",3)
                 if tag.name == "video":
                     #self.get_media(tag.source["src"],"video","<video src={} controls title=Title></video>",".",3)
